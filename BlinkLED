@@ -1,0 +1,80 @@
+//Set Blue LED to MY_LED in order to blink morse code
+const pin_t MY_LED = D7;
+
+
+// It allows your code to run before the cloud is connected. In this case,
+// it will begin blinking almost immediately instead of waiting until
+// breathing cyan,
+SYSTEM_THREAD(ENABLED);
+
+// The setup() method is called once when the device boots.
+void setup()
+{
+	// In order to set a pin, you must tell Device OS that the pin is
+	// an OUTPUT pin. This is often done from setup() since you only need
+	// to do it once.
+	pinMode(MY_LED, OUTPUT);
+}
+
+// The loop() method is called frequently.
+void loop()
+{
+	// Turn on the LED
+	//Blink letter O
+	digitalWrite(MY_LED, HIGH);
+	delay(500);
+	digitalWrite(MY_LED, LOW);
+    delay(300);
+    digitalWrite(MY_LED, HIGH);
+    delay(500);
+    digitalWrite(MY_LED, LOW);
+    delay(300);
+    digitalWrite(MY_LED, HIGH);
+    delay(500);
+    digitalWrite(MY_LED, LOW);
+    
+	// Transition to next letter
+	delay(1500);
+	
+	//Blink letter M
+	
+	digitalWrite(MY_LED, HIGH);
+	delay(500);
+	digitalWrite(MY_LED, LOW);
+    delay(300);
+    digitalWrite(MY_LED, HIGH);
+    delay(500);
+    digitalWrite(MY_LED, LOW);
+    
+	
+	//Transition to next letter
+	delay(1500);
+	
+	//Blink letter E
+	
+	digitalWrite(MY_LED, HIGH);
+	delay(250);
+	digitalWrite(MY_LED, LOW);
+	
+	//Transition to next letter
+	delay(1500);
+	
+	//Blink letter R
+	digitalWrite(MY_LED, HIGH);
+	delay(250);
+	digitalWrite(MY_LED, LOW);
+    delay(300);
+    digitalWrite(MY_LED, HIGH);
+    delay(500);
+    digitalWrite(MY_LED, LOW);
+    delay(300);
+    digitalWrite(MY_LED, HIGH);
+    delay(250);
+    digitalWrite(MY_LED, LOW);
+	
+
+	// Wait two more seconds
+	delay(2000);
+
+	// And repeat!
+}
